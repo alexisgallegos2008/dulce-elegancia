@@ -1,0 +1,596 @@
+
+/* ===================================
+   DULCE ELEGANCIA - style.css
+   =================================== */
+
+:root {
+    --rosa: #f6dce5;
+    --rosa-fuerte: #d96f94;
+    --rosa-oscuro: #a45270;
+    --dorado: #c6a15b;
+    --blanco: #ffffff;
+    --crema: #fff8f4;
+    --texto: #624654;
+    --verde: #25d366;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    min-height: 72px;
+    padding: 10px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--dorado);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--rosa-fuerte);
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--dorado);
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.navegacion a {
+    color: var(--texto);
+    font-size: 13px;
+    transition: color .3s;
+}
+
+.navegacion a:hover {
+    color: var(--rosa-fuerte);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--rosa-oscuro);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton-rosa {
+    background: var(--rosa-fuerte);
+    color: white;
+}
+
+.boton-rosa:hover {
+    background: var(--rosa-oscuro);
+}
+
+.boton-whatsapp {
+    background: var(--verde);
+    color: white;
+}
+
+.boton-whatsapp:hover {
+    background: #1eae54;
+}
+
+/* PORTADA: 1635 x 444 COMO REFERENCIA */
+
+.hero {
+    width: 100%;
+    height: 444px;
+    overflow: hidden;
+    position: relative;
+    background: var(--rosa);
+    border-bottom: 2px solid var(--dorado);
+}
+
+.hero-fondo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 30px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        90deg,
+        #fff4f3d9,
+        #fff9f5e8,
+        #fff4f3d9
+    );
+}
+
+.hero-texto {
+    max-width: 850px;
+}
+
+.etiqueta {
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    color: var(--rosa-fuerte);
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(48px, 6vw, 78px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.frase-dorada {
+    display: block;
+    margin-top: 8px;
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 27px);
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 20px auto 22px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PRESENTACIÓN */
+
+.presentacion {
+    padding: 38px 7%;
+    text-align: center;
+    background: var(--blanco);
+}
+
+.adornos {
+    margin-bottom: 8px;
+    color: var(--dorado);
+    font-size: 20px;
+}
+
+.presentacion h2,
+.productos h2,
+.personalizados h2,
+.contacto h2 {
+    margin: 8px 0 12px;
+    color: var(--rosa-fuerte);
+    font-size: clamp(27px, 3vw, 38px);
+}
+
+.presentacion p {
+    max-width: 780px;
+    margin: auto;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* CATÁLOGO */
+
+.productos {
+    padding: 45px 4%;
+    text-align: center;
+}
+
+.subtitulo {
+    margin-bottom: 25px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.producto {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--blanco);
+    border: 1px solid #e8c8b0;
+    border-radius: 13px;
+    box-shadow: 0 4px 15px #a4527010;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #a4527020;
+}
+
+/* TODAS LAS FOTOS DEL MISMO TAMAÑO */
+
+.producto-imagen {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    background: var(--rosa);
+}
+
+.producto-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .4s;
+}
+
+.producto:hover .producto-imagen img {
+    transform: scale(1.05);
+}
+
+.producto-info {
+    padding: 15px 13px 17px;
+}
+
+.producto-info h3 {
+    margin-bottom: 8px;
+    color: var(--rosa-oscuro);
+    font-size: 21px;
+}
+
+.producto-info p {
+    min-height: 42px;
+    margin-bottom: 13px;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.producto-info .boton {
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 11px;
+}
+
+/* PEDIDOS PERSONALIZADOS */
+
+.personalizados {
+    padding: 48px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--rosa), #fff5ec);
+    border-top: 1px solid #e9c5d1;
+    border-bottom: 1px solid #e9c5d1;
+}
+
+.icono {
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.personalizados p {
+    max-width: 720px;
+    margin: 0 auto 22px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* CONTACTO */
+
+.contacto {
+    padding: 45px 8%;
+    text-align: center;
+    background: var(--blanco);
+}
+
+.contacto p {
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.contacto .numero-contacto {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    padding: 25px 5%;
+    background: #cb7996;
+    color: var(--blanco);
+    text-align: center;
+    font-size: 11px;
+    line-height: 2;
+}
+
+.footer-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+}
+
+/* WHATSAPP FLOTANTE */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 200;
+    display: flex;
+    width: 55px;
+    height: 55px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--verde);
+    color: white;
+    font-size: 27px;
+    box-shadow: 0 4px 15px #0003;
+    transition: transform .3s;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.08);
+}
+
+/* TABLETAS */
+
+@media (max-width: 900px) {
+    .encabezado {
+        flex-wrap: wrap;
+    }
+
+    .navegacion {
+        gap: 15px;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+    .encabezado {
+        position: relative;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 5%;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .encabezado > .boton {
+        width: 100%;
+    }
+
+    .navegacion {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .navegacion.abierto {
+        display: flex;
+    }
+
+    .navegacion a {
+        padding: 12px;
+        border-top: 1px solid var(--rosa);
+    }
+
+    .hero {
+        height: 444px;
+    }
+
+    .hero-contenido {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .frase-dorada {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .presentacion {
+        padding: 32px 6%;
+    }
+
+    .productos {
+        padding: 35px 4%;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .producto-imagen {
+        height: 150px;
+    }
+
+    .producto-info {
+        padding: 12px 8px;
+    }
+
+    .producto-info h3 {
+        font-size: 17px;
+    }
+
+    .producto-info p {
+        min-height: 55px;
+        font-size: 11px;
+    }
+
+    .producto-info .boton {
+        font-size: 10px;
+    }
+
+    .personalizados,
+    .contacto {
+        padding: 38px 6%;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 380px) {
+    .catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-imagen {
+        height: 210px;
+    }
+
+    .producto-info h3 {
+        font-size: 20px;
+    }
+
+    .producto-info p {
+        min-height: auto;
+    }
+}
+/* DISEÑO ADAPTABLE PARA CELULARES */
+@media screen and (max-width: 768px) {
+
+    .banner {
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .producto img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contenedor {
+        width: 95%;
+        margin: auto;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media screen and (max-width: 480px) {
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .producto img {
+        height: 200px;
+    }
+
+    button, .boton {
+        width: 100%;
+    }
+}
